@@ -20,5 +20,5 @@ https://anharu.keiji.io/
 
 #### analysis_with_lfp.py  
 電極で計測されたマウスの神経活動を描画するプログラム
-個別に取得した神経中枢応答(LFP)及び神経末梢応答(ABR)を描画する
-研究室内で作成したライブラリ(glia,tath,piag,cosnail)が必要
+個別に取得した神経中枢応答(LFP)及び神経末梢応答(ABR)を描画する  
+研究室内で作成したライブラリ(glia,tath,piag,cosnail)が必要  
