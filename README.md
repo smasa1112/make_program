@@ -18,10 +18,14 @@ https://anharu.keiji.io/
 研究室内で作成したpython解析プログラムの一部  
 それぞれのプログラムに関して以下解説  
 
-#### analysis_with_lfp.py  
+#### analysis_abr_with_lfp.py  
 電極で計測されたマウスの神経活動を描画するプログラム  
 個別に取得した神経中枢応答(LFP)及び神経末梢応答(ABR)を描画する  
 研究室内で作成したライブラリ(glia,tath,piag,cosnail)が必要  
+
+#### abr_with_some_module.py
+末梢神経応答(ABR)をcsvファイルから取得・描画するためのプログラム  
+/abr_plotdata/ というディレクトリを作成し、そこに画像を保存する  
 
 ### python_practice  
 自身で勉強して作成したpythonプログラム   
