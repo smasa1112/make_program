@@ -22,3 +22,15 @@ https://anharu.keiji.io/
 電極で計測されたマウスの神経活動を描画するプログラム  
 個別に取得した神経中枢応答(LFP)及び神経末梢応答(ABR)を描画する  
 研究室内で作成したライブラリ(glia,tath,piag,cosnail)が必要  
+
+### python_practice  
+自身で勉強して作成したpythonプログラム   
+ipynb形式or pyファイルとして残してある  
+
+#### python_scikit-learn_practice.ipynb
+scikit-learnを使用して単回帰分析によるボストンの地価予測を行った  
+全データを7:3にわけ、訓練データをもとにテストデータの地価予測を行う  
+
+#### tk_calc_model.py
+tkinterをGUIアプリケーションとして電卓アプリを作成した  
+出力はすべて整数のみで、除算に関しても整数値の最大値が出力される  
