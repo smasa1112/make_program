@@ -1,12 +1,12 @@
 # ユーザーの作成プログラム一覧
 
-### [discord_comment_reading_bot]("https://github.com/smasa1112/make_program/tree/master/discord_comment_reading_bot")
+### discord_comment_reading_bot
 Discord内でコメントを読み上げるようにしたプログラム  
 read_bot.pyを自身で作成し、他プログラムはhts_engine及びopen_jtalk配布サイトから拝借  
 コマンドプロンプトから使用可能  
 このような使い方が適切かはわからないが、すべてのファイルが入っているためダウンロードし、read_bot.pyの部分のサーバーキーを書き換えることで、他サーバーでも使用可能である  
 
-###  [Culcjava]("https://github.com/smasa1112/make_program/tree/master/Culcjava")
+###  Culcjava
 Android studioで作成した電卓アプリ  
 言語はjavaによって作成した  
 Android端末及び、仮想端末で使用可能  
