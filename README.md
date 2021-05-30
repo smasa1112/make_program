@@ -1,6 +1,6 @@
 # ユーザーの作成プログラム一覧
 
-### discord_comment_reading_bot
+### [discord_comment_reading_bot](URL"https://github.com/smasa1112/make_program/tree/master/discord_comment_reading_bot")
 Discord内でコメントを読み上げるようにしたプログラム  
 read_bot.pyを自身で作成し、他プログラムはhts_engine及びopen_jtalk配布サイトから拝借  
 コマンドプロンプトから使用可能  
