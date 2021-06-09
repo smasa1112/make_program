@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Vocal.SoundMixer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vocal"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" Width="492">
+    <Grid>
+        <TabControl VerticalAlignment="Top" Margin="0,0,15,0">
+            <TabItem Header="Pure Tone" >
+                <Grid Background="#FFE5E5E5">
+                    <local:PureToneMixer  x:Name="PureTone" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Click Tone">
+                <Grid Background="#FFE5E5E5">
+                    <local:ClickSoundMixer  x:Name="ClickTone" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="AM Tone">
+                <Grid Background="#FFE5E5E5">
+                    <local:AmToneMixer  x:Name="ModulationTone" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Ultrasound">
+                <Grid Background="#FFE5E5E5">
+                    <local:UltrasoundMixer  x:Name="Ultrasound" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="USMod">
+                <Grid Background="#FFE5E5E5">
+                    <local:USModMixer  x:Name="USMod" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="USHum">
+                <Grid Background="#FFE5E5E5">
+                    <local:USHumMixer  x:Name="USHum" HorizontalAlignment="Left" Height="500"  VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Magnetic">
+                <Grid Background="#FFE5E5E5">
+                    <local:MagneticMixer  x:Name="Magnetic" HorizontalAlignment="Left" Height="500"  Width="550" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="User Defined">
+                <Grid Background="#FFE5E5E5">
+                    <local:UserSoundMixer x:Name="UserDefined" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="510" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,76 @@
+﻿<Window x:Class="Vocal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vocal"
+        mc:Ignorable="d"
+        Title="Vocal Control ver.3.1.1" Height="620" Width="1240" ResizeMode="CanMinimize" FontFamily="Yu Gothic UI">
+    <Grid>
+        <local:OutputList x:Name="Output" Height="540" Width="300" Margin="0,35,924,16" />
+        <local:SoundMixer x:Name="Mixer" Margin="290,35,350,0" Height="540"  Width="580" VerticalAlignment="Top"/>
+        <GroupBox Header="User Control" HorizontalAlignment="Left" Height="336" Margin="870,232,10,0" VerticalAlignment="Top" Width="353">
+            <Grid>
+                <ProgressBar x:Name="Progress" HorizontalAlignment="Left" Height="15" Margin="10,39,0,0" VerticalAlignment="Top" Width="280"/>
+                <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="75" Click="OnStartClick"/>
+                <Button x:Name="Stop" Content="Stop" HorizontalAlignment="Left" Margin="90,12,0,0" VerticalAlignment="Top" Width="75" Click="OnStop"/>
+                <local:TextConsole x:Name="Console" Margin="10,59,10,6"/>
+            </Grid>
+        </GroupBox>
+
+        <TabControl x:Name="Option" Height="198" Margin="870,35,10,0" VerticalAlignment="Top" >
+            <TabItem Header="Trial">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="53*"/>
+                        <ColumnDefinition Width="296*"/>
+                    </Grid.ColumnDefinitions>
+                    <local:IntervalControl x:Name="Interval" Grid.ColumnSpan="2"/>
+
+                    <Label Content="Trial Count" HorizontalAlignment="Left" Margin="118,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox x:Name="trialCount" HorizontalAlignment="Left" Height="23" Margin="119,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Text="20" Grid.Column="1"/>
+
+                    <Label Content="Random" HorizontalAlignment="Left" Margin="118,103,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <ComboBox x:Name="Random" HorizontalAlignment="Left" Margin="119,129,0,0" VerticalAlignment="Top" Width="155" SelectedIndex="0" Grid.Column="1">
+                        <ComboBoxItem>Not</ComboBoxItem>
+                        <ComboBoxItem>Partial Random(Micam)</ComboBoxItem>
+                        <ComboBoxItem>Full Random(Omniplex)</ComboBoxItem>
+                        <ComboBoxItem>ABR Mode(TDT)</ComboBoxItem>
+                    </ComboBox>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Trigger">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Trigger Level [V]" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="triggerVoltage" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" Text="3.5" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="FunGene Trigger Level [V]" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="fungenetriggerVoltage" HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" Text="4.5" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="DAQ" Height="22" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <local:DAQControl x:Name="Configure" DataContext="Device"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="FunGene" Height="22" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <local:FunGeneControl x:Name="FGConfigure" DataContext="Device" Loaded="FGConfigure_Loaded"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="1194" RenderTransformOrigin="0.5,0.5">
+            <MenuItem Header="ファイル(_F)" RenderTransformOrigin="0.525,0.722" Height="25">
+                <MenuItem Header="刺激パラメータを保存する(_s)" Click="OnMixerSave"/>
+                <MenuItem Header="刺激パラメータを読み込みする(_r)" Click="OnMixerLoad"/>
+                <Separator/>
+                <MenuItem Header="刺激オーダーを保存する(_o)" Click="OnOutputListSave" />
+                <MenuItem Header="刺激オーダーを読み込みする(_q)" Click="OnOutputListLoad"/>
+                <Separator/>
+                <MenuItem Header="終了" />
+            </MenuItem>
+            <MenuItem Header="ヘルプ(_H)" Click="OnHelp">
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>
